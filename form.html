@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RELECTRO</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: url('https://cdn.pixabay.com/photo/2017/04/06/09/26/design-2207760_640.png') no-repeat center center fixed; 
+      background-size: cover; 
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .welcome-box, .form-box, .cost-box {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      width: 350px;
+    }
+    .welcome-box {
+      display: block;
+    }
+    .form-box, .cost-box {
+      display: none;
+    }
+    h1, h2 {
+      color: #2453a3;
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      text-align: left;
+      margin-top: 15px;
+    }
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      background-color: #337ab7;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #2453a3;
+    }
+  </style>
+</head>
+<body>
+  <div class="welcome-box" id="welcomeBox">
+    <h1>Welcome to RELECTRO</h1>
+    <button onclick="showForm()">Sell Your Laptop</button>
+  </div>
+  
+  <div class="form-box" id="formBox">
+    <h2>Sell Your Laptop</h2>
+    <form onsubmit="calculateCost(event)">
+      <label for="brand">Laptop Brand *</label>
+      <input type="text" id="brand" required>
+      <label for="age">Laptop Age (in years) *</label>
+      <input type="number" id="age" required>
+      <label for="processor">Processor *</label>
+      <select id="processor" required>
+        <option>Intel i5</option>
+        <option>Intel i7</option>
+        <option>Intel i9</option>
+        <option>Ryzen 5</option>
+        <option>Ryzen 7</option>
+      </select>
+      <label for="ram">RAM (in GB) *</label>
+      <input type="number" id="ram" required>
+      <label for="storage">Storage Type *</label>
+      <select id="storage" required>
+        <option>HDD</option>
+        <option>SSD</option>
+      </select>
+      <label for="condition">Condition *</label>
+      <select id="condition" required>
+        <option>Poor</option>
+        <option>Fair</option>
+        <option>Good</option>
+        <option>Excellent</option>
+      </select>
+      <button type="submit">OK</button>
+    </form>
+  </div>
+  
+  <div class="cost-box" id="costBox">
+    <h2>Estimated Cost</h2>
+    <p id="costAmount">Your estimated cost will appear here.</p>
+    <button onclick="resetForm()">OK</button>
+  </div>
+
+  <script>
+    function showForm() {
+      document.getElementById('welcomeBox').style.display = 'none';
+      document.getElementById('formBox').style.display = 'block';
+    }
+    
+    function calculateCost(event) {
+      event.preventDefault();
+      let age = parseInt(document.getElementById('age').value);
+      let condition = document.getElementById('condition').value;
+      let processor = document.getElementById('processor').value;
+      let ram = parseInt(document.getElementById('ram').value);
+      let storage = document.getElementById('storage').value;
+      let cost = 0;
+
+      if (age >= 5) {
+        if (condition === 'Poor') cost = 3000;
+        else if (condition === 'Fair') cost = 7000;
+        else if (condition === 'Good') cost = 10000;
+        else if (condition === 'Excellent') cost = 25000;
+      } else {
+        if (condition === 'Poor') cost = 5000;
+        else if (condition === 'Fair') cost = 12000;
+        else if (condition === 'Good') cost = 17000;
+        else if (condition === 'Excellent') cost = 35000;
+      }
+
+      switch (processor) {
+        case 'Intel i7':
+          cost += 5000;
+          break;
+        case 'Intel i9':
+          cost += 10000;
+          break;
+        case 'Ryzen 7':
+          cost += 7000;
+          break;
+      }
+
+      if (ram >= 16) {
+        cost += 5000;
+      } else if (ram >= 8) {
+        cost += 2000;
+      }
+
+      if (storage === 'SSD') {
+        cost += 5000;
+      }
+
+      document.getElementById('costAmount').textContent = `Your laptop is estimated to sell for ₹${cost}`;
+      document.getElementById('formBox').style.display = 'none';
+      document.getElementById('costBox').style.display = 'block';
+    }
+
+    function resetForm() {
+      document.getElementById('costBox').style.display = 'none';
+      document.getElementById('welcomeBox').style.display = 'block';
+    }
+  </script>
+</body>
+</html>

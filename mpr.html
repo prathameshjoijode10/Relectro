@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - RELECTRO</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #b6d4e7a0;
+        }
+        #navbar {
+            width: 100%;
+            height: 80px;
+            background-color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            box-sizing: border-box;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar-left {
+            display: flex;
+            align-items: center;
+        }
+        .navbar-left img {
+            height: 50px;
+        }
+        .navbar-left b {
+            color: #000;
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: 32px;
+            margin-left: 15px;
+        }
+        .navbar-right {
+            display: flex;
+            gap: 20px;
+        }
+        .hover-link {
+            color: #000000;
+            font-size: 18px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .hover-link:hover {
+            color: #114b71;
+        }
+        .overlay-box button {
+            background-color: #4682A9;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            margin: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .overlay-box button:hover {
+            background-color: #114b71;
+        }
+        #top-section {
+            background-image: url(https://assets.audiomack.com/oluwayoungd/980fd222062df2df6aa80a033eb9208f7dc8c9b31b8be2b434818f3bfad653bc.png);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .overlay-box {
+            background-color: rgba(255, 255, 255, 0.562);
+            padding: 60px;
+            border-radius: 20px;
+            width: 900px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-size: 24px;
+        }
+        .slogan {
+            font-size: 32px;
+            color: #000;
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+        #about-us{
+            background-color: #f0f0f0;
+            padding: 40px 20px;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #contact-us{
+            background-color: #f0f0f0;
+            padding: 40px 20px;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .about-us-text, .contact-us-text {
+            text-align: center;
+            font-size: 20px;
+        }
+        .about-us-text h2, .contact-us-text h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #114b71;
+        }
+        #contact-us form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        #contact-us input, #contact-us textarea {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        #contact-us button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #6996b3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        #contact-us button:hover {
+            background-color: #114b71;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <div class="navbar-left">
+            <img src="image.png" alt="Logo">
+            <b>RELECTRO</b>
+        </div>
+        <div class="navbar-right">
+            <a href="tnc.html" class="hover-link">T&C</a>
+            <a href="pc.html" class="hover-link">PRIVACY POLICY</a>
+        </div>
+    </div>
+
+    <div id="top-section">
+        <div class="overlay-box">
+            <div class="slogan">
+                Sustainable tech solutions ahead...
+            </div>
+            <p>Do you want to proceed with:</p>
+            <button onclick="alert('SELLING selected')">SELLING</button>
+            <button onclick="alert('BUYING selected')">BUYING</button>
+        </div>
+    </div>
+
+    <div id="about-us">
+        <div class="about-us-text">
+            <h2>About Us</h2>
+            <p>At RELECTRO, we are dedicated to offering sustainable technology solutions. We specialize in buying and selling second-hand laptops to promote recycling and reduce electronic waste.</p>
+            <p>Our mission is to provide customers with an excellent experience in sustainable tech while contributing positively to the environment.</p>
+        </div>
+    </div>
+
+    <div id="contact-us">
+        <div class="contact-us-text">
+            <h2>Contact Us</h2>
+            <p>If you have any questions, feedback, or inquiries, feel free to reach out to us using the form below:</p>
+            <form action="form.html" method="POST">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
