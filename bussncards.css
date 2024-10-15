@@ -1,0 +1,335 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap'); /* Updated font family */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: 'Poppins', sans-serif;
+    color: #ffffff; */
+    font-family: 'Roboto', sans-serif; /* Updated font family */
+     /* color: #1b0303;  */
+}
+html , body{
+    width: 100%;
+    height: 100%;
+}
+body{
+    height: 100%;
+    width: 100%;
+     padding: 2% 2%;
+     /* background-color: black; */
+     /* background: #230202; */
+     /* background: linear-gradient(90deg, #ff007a, #4a00e0); */
+     /* background: linear-gradient(90deg, #e0e0e0, #ffffff); */
+     background-color: #f5f5f5;
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-evenly;
+}
+
+
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    padding: 50px 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    /* background-color: #4796ff;
+    height:1px; */
+
+}
+
+
+.logo {
+  height: 80px;
+  width: 100px;
+  background-image: url(relogo.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+
+.navbar a{
+  position: relative;
+  left: -50%;
+  font-size: 18px;
+  color: black;
+  font-weight: 900;
+  text-decoration: none;
+  margin-left: 40px;
+
+}
+
+.navbar a::before{
+  content: '';
+  position: absolute;
+  top: 100%;
+  left:0;
+  width: 0;
+  height: 3px;
+  background-color: black;
+  transition: .3s;
+}
+
+.navbar a:hover::before{
+  width: 100%;
+
+}
+
+
+.hero {
+    width: 100%;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    background-image: url(https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 11.6%;
+    
+    color: white;
+}
+
+.hero-content {
+    text-align: center;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.36);
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.cta-button {   
+    padding: 12px 30px;
+    border-radius: 50px;
+    background-color: #4a00e0;
+    color: white;
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.cta-button:hover {
+    background-color: #000000;
+}
+
+
+.vertical {
+    margin-left: 100px;
+    border-left: 6px solid transparent;
+    height: 5000px;
+    position: absolute;
+    top: 700px;
+    z-index: -1;
+  }
+
+.box1 {
+    border: 1px;
+    border-color: transparent;
+    border-style: solid;
+    height: 500px;
+    width: 1350px;
+    position: absolute;
+    top: 0px;
+    left: -750px;
+    z-index: -2;
+
+}
+
+
+#text1 h1 {
+    color:  rgb(3, 7, 37);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    position: absolute;
+    left: 50px;
+    top: 40px;
+}
+
+/* #text1 p {
+    color: #000000;
+    font-size: 20px;
+    position: absolute;
+    top: 100px;
+    left: 5px;
+    right: 300px;
+} */
+
+#smallbox {
+    background-color: white;
+    height: 150px;
+    width: 500px;
+    position: absolute;
+    top: 180px;
+    border-radius: 12px;
+    border: #dad8d8 1px solid;
+    left:-100px;
+
+}
+
+#smallbox h1{
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    left:40px;
+    top:10px;
+    left:100px;
+}
+
+#smallbox p {
+    font-size: 15px;
+    position: absolute;
+    top:80px;
+    color:rgb(85, 85, 85);
+    left: 15px;
+}
+
+#smallbox2 {
+    background-color: white;
+    height: 150px;
+    width: 500px;
+    position: absolute;
+    top: 180px;
+    border-radius: 12px;
+    border: #dad8d8 1px solid;
+    left: 500px;
+
+}
+
+#smallbox2 h1{
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    left:100px;
+    top:10px;
+}
+
+#smallbox2 p {
+    font-size: 15px;
+    position: absolute;
+    top:70px;
+    color:rgb(85, 85, 85);
+    left: 15px;
+}
+
+
+#smallbox3 {
+    background-color: white;
+    height: 150px;
+    width: 500px;
+    position: absolute;
+    top: 400px;
+    border-radius: 12px;
+    border: #dad8d8 1px solid;
+    left:-100px;
+
+}
+
+#smallbox3 h1{
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    left:100px;
+    top:10px;
+}
+
+#smallbox3 p {
+    font-size: 15px;
+    position: absolute;
+    top:70px;
+    left: 15px;
+    color:rgb(85, 85, 85);
+}
+
+#smallbox4 {
+    background-color: white;
+    height: 150px;
+    width: 500px;
+    position: absolute;
+    top: 400px;
+    border-radius: 12px;
+    border: #dad8d8 1px solid;
+    left: 500px;
+
+}
+
+#smallbox4 h1{
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    left:100px;
+    top:10px;
+}
+
+#smallbox4 p {
+    font-size: 15px;
+    position: absolute;
+    left: 15px;
+    top:70px;
+    color:rgb(85, 85, 85);
+}
+
+
+
+
+
+#lady {
+    position: absolute;
+    left:1125px;
+    height: 540px;
+}
+
+#exp {
+    height: 60px;
+    width: 300px;
+    position:absolute;
+    top: 600px;
+    
+    background-color: white;
+    border-radius: 40px;
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 19px;
+    text-align: center;
+    transition: background-color 1s ease-in-out ;
+    transition: font-size 1s ease-in-out;
+    
+     }
+  
+    #a {
+      text-decoration: none;
+      font-family:cursive
+    }
+    
+  
+  
+  
+  #exp:hover {
+    background-color: black;
+    color: goldenrod;
+    font-size: 20px;
+  
+  } 
+
+
